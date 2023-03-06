@@ -25,6 +25,10 @@ class EnderecoController extends Controller
     {
 
     }
+    public static function getBairrosByidCidade (): void
+    {
+
+    }
    /* public static function teste()
     {
        // var_dump("Querid@s alun@s");

@@ -1,6 +1,6 @@
 <?php
 
-use APPCEP\Controller\EnderecoController;
+use APP\Controller\EnderecoController;
 
 $url = parse_url($_SERVER['REQUEST_UR1'], PHP_URL_PATH);
 
