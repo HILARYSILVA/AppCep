@@ -96,6 +96,7 @@ class EnderecoController extends Controller
             parent::getExceptionAsJSON($e);
         }
     }
+    
     public static function getBairrosByidCidade() : void
     {
         try

@@ -14,4 +14,15 @@ class CidadeModel extends Model
        
         $this->rows = $dao->selectCidadesByUf($uf);
     }
+
+    public static function getCidadesByUf(): void 
+    {
+
+    }
+
+    public static function getBairrosByidCidade (): void
+    {
+
+    }
+    
 }

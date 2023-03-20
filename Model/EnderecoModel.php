@@ -3,10 +3,10 @@
 namespace App\Model;
 
 use App\DAO\EnderecoDAO; 
-use Exception;
+use FFI\Exception;
 
 
-Class EnderecoModel extends Model
+class EnderecoModel extends Model
 {
     public $id_logradouro, $tipo, $descricao, $id_cidade,
            $uf, $complemento, $descricao_sem_numero,
@@ -38,10 +38,13 @@ Class EnderecoModel extends Model
         {
             $dao = new EnderecoDAO();
 
-            $this->rows = $dao-> selectCepByLogradouro($logradouro);
+            return $dao->selectCepByLogradouro($logradouro);
 
         }catch(Exception $e) {
             echo $e-> getMessage();
         }
     }
+
+    
+    
 }

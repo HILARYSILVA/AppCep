@@ -31,8 +31,6 @@ class EnderecoDAO extends DAO
 
     }
      
-
-
     public function selectCidadesByUf(int $uf)
     {
         $sql = "SELECT * FROM cidade WHERE uf =? ORDER BY descricao";
@@ -41,7 +39,7 @@ class EnderecoDAO extends DAO
         $stmt-> binValue(1, $uf);
         $stmt->execute()
 
-     return $stmt->fetchAll(DAO::FETCH_CLASS);
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
         
     }
     public  function SelectLogradouroByBairroAndCidade(
