@@ -15,7 +15,7 @@ abstract class DAO extends PDO
         try
         {
              $options = [
-               PDO::ATTR_ERRMODE => ERRMODE_EXCEPTION,
+               PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
 
              ];

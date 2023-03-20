@@ -40,6 +40,23 @@ class EnderecoController extends Controller
 
 
     }*/
+    public static function GetCepByLogradouro() : void
+    {
+        try
+        {
+             $logradouro = $_GET['logradouro'];
+
+             $model = new EnderecoModel();
+             $model->GetCepByLogradouro($logradouro);
+
+             parent ::getResponseAsJSON($model->rows);
+        
+            }catch (Exception $e) {
+
+                parent::getExceptionAsJSON($e)
+            }
+    }
 }
+
 ?>
 

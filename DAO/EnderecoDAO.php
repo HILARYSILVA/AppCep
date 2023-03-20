@@ -33,9 +33,16 @@ class EnderecoDAO extends DAO
      
 
 
-    public function selectCidadesByUf($uf)
+    public function selectCidadesByUf(int $uf)
     {
-        $sql = "SELECT * FROM cidade WHERE uF =?"
+        $sql = "SELECT * FROM cidade WHERE uf =? ORDER BY descricao";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt-> binValue(1, $uf);
+        $stmt->execute()
+
+     return $stmt->fetchAll(DAO::FETCH_CLASS);
+        
     }
     public  function SelectLogradouroByBairroAndCidade(
         string  $bairro, int $id_cidade)
