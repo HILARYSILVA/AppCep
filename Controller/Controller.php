@@ -53,5 +53,24 @@ abstract class Controller
 
     }
     
+    protected static function getInFromUrl($var_get, $var_neme = null) : int
+    {
+        self::isGet();
+
+        if(!empty($var_get))
+                return (int) $var_get;
+        else
+            throw new Exception("variavel $var_neme não identificado.");
+    }
+
+    protected static function getStringFromUrl($var_get, $var_neme = null) : string
+    {
+        self::isGet();
+
+        if(!empty($var_get))
+                return (string) $var_get;
+        else
+            throw new Exception("variavel $var_neme não identificado.");
+    }
 }
 
