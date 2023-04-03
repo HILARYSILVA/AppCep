@@ -17,6 +17,20 @@ abstract class Controller
         exit(json_encode($data));
     }
 
+    protected static function setResponseAsJSON($data, $_request_status = true)
+    {
+        $response = array('respopnse_data' => $data,
+        'response_sucessful' => $_request_status);
+        
+        header("Acces-Contrtol-Allow-Origin: *");
+        header("Content-type: application/json; charset=utf-8");
+        header("Cache -Control: no-cache, must-revalidate");
+        header("Expires: Mon,26 Jul 1997 05:00:00 GMT");
+        header("Programa: public");
+
+        exit(json_encode($response));
+    }
+
     protected static function getExceptionAsJSON(Exception $e)
     {
         $exception = [
@@ -73,4 +87,3 @@ abstract class Controller
             throw new Exception("variavel $var_neme não identificado.");
     }
 }
-

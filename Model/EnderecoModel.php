@@ -6,7 +6,7 @@ use App\DAO\EnderecoDAO;
 use FFI\Exception;
 
 
-class EnderecoModel extends Model
+class EnderecoModel extends CidadeModel
 {
     public $id_logradouro, $tipo, $descricao, $id_cidade,
            $uf, $complemento, $descricao_sem_numero,
